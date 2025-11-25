@@ -1,5 +1,7 @@
 # Sistema de Gerenciamento de Notas e Frequência
 
+Teste a aplicação: https://dti-challenge-frontend.onrender.com
+
 ## Objetivo
 
 Organize e acompanhar:
@@ -23,19 +25,13 @@ Organize e acompanhar:
 
 ## Execução
 
+### Frontend
+
+O frontend está hospedado em `https://dti-challenge-frontend.onrender.com`
+
 ### Backend
 
 O backend está hospedado em `https://dti-challenge.onrender.com`
-
-### Frontend
-
-```bash
-cd frontend
-npm install
-npm start
-```
-
-O frontend rodará em `http://localhost:3000`
 
 ## 📁 Estrutura do Projeto
 
