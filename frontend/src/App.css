@@ -1,38 +1,337 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.mensagem {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-weight: 500;
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.mensagem.sucesso {
+  background-color: #4caf50;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.mensagem.erro {
+  background-color: #f44336;
+  color: white;
 }
 
-@keyframes App-logo-spin {
+@keyframes slideIn {
   from {
-    transform: rotate(0deg);
+    transform: translateX(400px);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    transform: translateX(0);
+    opacity: 1;
   }
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  color: #667eea;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 10px;
+}
+
+.card h3 {
+  color: #764ba2;
+  margin: 20px 0 10px 0;
+  font-size: 1.2rem;
+}
+
+/* Estatísticas */
+.estatisticas p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.disciplinas {
+  margin-top: 20px;
+}
+
+.disciplina {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 5px 0;
+  background: #f5f5f5;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.disciplina:hover {
+  background: #e8e8e8;
+}
+
+.disciplina .nota {
+  font-weight: bold;
+  color: #667eea;
+}
+
+/* Alunos em atenção */
+.atencao {
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+  border: 2px solid #ff6b6b;
+}
+
+.atencao h2 {
+  color: #d32f2f;
+  border-bottom-color: #d32f2f;
+}
+
+.lista-atencao {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.aluno-atencao {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #f44336;
+}
+
+.aluno-atencao strong {
+  display: block;
+  color: #d32f2f;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.aluno-atencao ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.aluno-atencao li {
+  color: #666;
+  padding: 5px 0;
+  font-size: 0.95rem;
+}
+
+.aluno-atencao li:before {
+  content: "⚠️ ";
+  margin-right: 8px;
+}
+
+/* Formulários */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+button {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Lista de Alunos */
+.lista-alunos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.aluno-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.aluno-item:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+.aluno-item.selecionado {
+  background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+  border-color: #667eea;
+}
+
+.aluno-info {
+  flex: 1;
+}
+
+.aluno-info strong {
+  display: block;
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.aluno-stats {
+  display: flex;
+  gap: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.btn-remover {
+  background: #f44336;
+  padding: 8px 12px;
+  font-size: 1.2rem;
+  min-width: auto;
+}
+
+.btn-remover:hover {
+  background: #d32f2f;
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.4);
+}
+
+/* Edição */
+.edicao {
+  background: linear-gradient(135deg, #f0f4ff 0%, #f8f0ff 100%);
+  border: 2px solid #667eea;
+}
+
+.notas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.nota-input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nota-input label {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .notas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mensagem {
+    left: 20px;
+    right: 20px;
+  }
+}
+
+/* Scrollbar customizada */
+.lista-alunos::-webkit-scrollbar {
+  width: 8px;
+}
+
+.lista-alunos::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.lista-alunos::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 10px;
+}
+
+.lista-alunos::-webkit-scrollbar-thumb:hover {
+  background: #764ba2;
 }
