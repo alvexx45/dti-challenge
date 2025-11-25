@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-const API_URL = process.env.REACT_APP_API_URL || 'https://dti-challenge.onrender.com';
+const API_URL = process.env.REACT_APP_API_URL || 'https://dti-challenge.onrender.com/';
 
 function App() {
   const [alunos, setAlunos] = useState([]);
