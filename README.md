@@ -1,8 +1,6 @@
-# 📚 Sistema de Gerenciamento de Notas e Frequência
+# Sistema de Gerenciamento de Notas e Frequência
 
-Sistema de gerenciamento de notas e frequência de alunos.
-
-## 🎯 Objetivo
+## Objetivo
 
 Organize e acompanhar:
 - Notas dos alunos em 5 disciplinas (0 a 10)
@@ -10,7 +8,7 @@ Organize e acompanhar:
 - Médias individuais e da turma
 - Identificação automática de alunos que precisam de atenção especial
 
-## 🏗️ Arquitetura
+## Arquitetura
 
 ### Backend (Python/Flask)
 - API RESTful completa
@@ -23,17 +21,11 @@ Organize e acompanhar:
 - Estatísticas em tempo real
 - Alertas visuais para alunos em situação de atenção
 
-## 🚀 Instalação e Execução
+## Execução
 
 ### Backend
 
-```bash
-cd backend
-pip install -r requirements.txt
-python app.py
-```
-
-O backend rodará em `http://localhost:5000`
+O backend está hospedado em `https://dti-challenge.onrender.com`
 
 ### Frontend
 
