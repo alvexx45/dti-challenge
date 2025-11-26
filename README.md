@@ -1,6 +1,7 @@
 # Sistema de Gerenciamento de Notas e Frequência
 
 Teste a aplicação: https://dti-challenge-frontend.onrender.com
+Obs: a inicialização pode ser lenta por conta da hospedagem do Render, abaixo contém instruções para execução localmente.
 
 ## Objetivo
 
@@ -25,13 +26,34 @@ Organize e acompanhar:
 
 ## Execução
 
-### Frontend
+Pode ser feita localmente ou pelo site hospedado, para executar localmente o backend deve ser executado em um terminal e o frontend em outro.
 
-O frontend está hospedado em `https://dti-challenge-frontend.onrender.com`
 
 ### Backend
 
-O backend está hospedado em `https://dti-challenge.onrender.com`
+O backend está hospedado em https://dti-challenge.onrender.com
+
+```bash
+cd backend
+pip install -r requirements.txt
+python app.py
+```
+
+Estará disponível em http://localhost:5000
+
+### Frontend
+
+O frontend está hospedado em https://dti-challenge-frontend.onrender.com
+
+Execução local:
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+Estará disponível em http://localhost:3000
 
 ## 📁 Estrutura do Projeto
 
